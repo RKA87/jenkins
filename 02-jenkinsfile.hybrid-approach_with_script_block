@@ -1,26 +1,22 @@
 pipeline {
-    agent {
-        node {
-            label 'ROBOSHOP'
-        }
-    }
+    agent any
     stages {
         stage ('Build') {
             steps {
-                script{
+                script {
                     sh """
-                        echo "Build Stage from ROBOSHOP AGENT Node"
+                        echo "Build Stage"
 
                     """
                 }
-            }
 
+            }
         }
         stage ('Test') {
             steps {
                 script {
                     sh """
-                        echo "Test Stage from ROBOSHOP AGENT Node"
+                        echo "Testing Stage"
 
                     """
                 }
@@ -30,7 +26,7 @@ pipeline {
             steps {
                 script {
                     sh """
-                        echo "Deploy Stage from ROBOSHOP AGENT Node"
+                        echo "Deploy Stage"
 
                     """
                 }
