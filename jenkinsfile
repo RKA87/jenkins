@@ -1,0 +1,30 @@
+// Declarative Pipiline -->It also using Groovy syntax, before execution it check for errors
+// - more control to write scripts
+
+pipeline {
+    agent any
+    stages {
+        stage(Build) {
+            steps {
+                echo "Building"
+
+            }
+        }
+        stage('Test') {
+            steps {
+                echo "Testing"
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo "Deployment"
+            }
+        }
+    }
+}
+
+// Scripted Pipeline
+// Old Pipeline, groovy syntax , it checks errors after execution 
+// however you have full control to write the scripts on your own
+
+// so we need to follow the Hybrid Pipeline approach to use in our projects
