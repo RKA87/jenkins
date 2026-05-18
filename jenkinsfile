@@ -4,48 +4,46 @@ pipeline {
             label 'ROBOSHOP'
         }
     }
+    environment {
+        COURSE = "jenkins"
+        TRAINER = "sivakumar reddy"
+    }
+    // options {
+
+    // }
     stages {
         stage ('Build') {
-            steps {
-                script {
-                    sh """
-                        echo "Build from Roboshop agent node"
+            script {
+                sh """
+                    echo "This Course is $COURSE and training by $TRAINER "
 
-                    """
-                }
+                """
             }
         }
         stage ('Test') {
-            steps {
-                script {
-                    sh """
-                        echo "Test from Robshop agent node"
-                        exit 1
+            script {
+                sh """
 
-                    """
-                }
+                """
             }
         }
         stage ('Deploy') {
-            steps {
-                script {
-                    sh """
-                        echo "Deploy from Roboshop agent node"
+            script {
+                sh """
 
-                    """
-                }
+                """
             }
         }
     }
     post {
         always {
-            echo "Final check of post build"
-        }
-        success {
-            echo "pipeline success"
+            echo "post build checks as final"
         }
         failure {
             echo "pipeline failure"
+        }
+        success {
+            echo "pipeline success"
         }
     }
 }
