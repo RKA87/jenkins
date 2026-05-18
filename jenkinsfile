@@ -41,7 +41,7 @@ pipeline {
                     sh """
                         echo " Hello from Deploy Stage using ROBOSHOP Agent Node"
 
-                    """"
+                    """
                 }
             }
             post {
