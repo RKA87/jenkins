@@ -19,7 +19,7 @@ pipeline {
         stage ('Test') {
             steps {
                 script {
-                    sh """"
+                    sh """
                         echo "Test Stage from Jenkins agent node"
                     """
                 }
@@ -30,9 +30,8 @@ pipeline {
         stage ('Deploy') {
             steps {
                 script {
-                    sh """"
+                    sh """
                         echo "Deploy Stage from Jenkins agent node"
-
                     """
                 }
 
