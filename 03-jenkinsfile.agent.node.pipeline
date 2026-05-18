@@ -7,9 +7,9 @@ pipeline {
     stages {
         stage ('Build') {
             steps {
-                script {
+                script{
                     sh """
-                        echo "Build Stage from Jenkins agent node"
+                        echo "Build Stage from ROBOSHOP AGENT Node"
 
                     """
                 }
@@ -19,23 +19,21 @@ pipeline {
         stage ('Test') {
             steps {
                 script {
-                    sh """"
-                        echo "Test Stage from Jenkins agent node"
+                    sh """
+                        echo "Test Stage from ROBOSHOP AGENT Node"
+
                     """
                 }
-
             }
-
         }
         stage ('Deploy') {
             steps {
                 script {
-                    sh """"
-                        echo "Deploy Stage from Jenkins agent node"
+                    sh """
+                        echo "Deploy Stage from ROBOSHOP AGENT Node"
 
                     """
                 }
-
             }
         }
     }
