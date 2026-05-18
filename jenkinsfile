@@ -1,0 +1,51 @@
+pipeline {
+    agent {
+        node {
+            label 'ROBOSHOP'
+        }
+    }
+    stages {
+        stage ('Build') {
+            steps {
+                script {
+                    sh """
+                        echo "Build from Roboshop agent node"
+
+                    """
+                }
+            }
+        }
+        stage ('Test') {
+            steps {
+                script {
+                    sh """
+                        echo "Test from Robshop agent node"
+                        exit 1
+
+                    """
+                }
+            }
+        }
+        stage ('Deploy') {
+            steps {
+                script {
+                    sh """
+                        echo "Deploy from Roboshop agent node"
+
+                    """
+                }
+            }
+        }
+    }
+    post {
+        always {
+            echo "Final check of post build"
+        }
+        success {
+            echo "pipeline success"
+        }
+        failure {
+            echo "pipeline failure"
+        }
+    }
+}
