@@ -8,15 +8,18 @@ pipeline {
         COURSE = "jenkins"
         TRAINER = "sivakumar reddy"
     }
-    // options {
+    options {
+        disableConcurrentBuilds()
+        timeout(time: 10, unit: 'SECONDS')
 
-    // }
+    }
     stages {
         stage ('Build') {
             steps {
                 script {
                     sh """
                         echo "This Course is $COURSE and training by $TRAINER "
+                        sleep 12
 
                     """
                 }
