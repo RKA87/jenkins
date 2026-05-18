@@ -13,25 +13,31 @@ pipeline {
     // }
     stages {
         stage ('Build') {
-            script {
-                sh """
-                    echo "This Course is $COURSE and training by $TRAINER "
+            steps {
+                script {
+                    sh """
+                        echo "This Course is $COURSE and training by $TRAINER "
 
-                """
+                    """
+                }
             }
         }
         stage ('Test') {
-            script {
-                sh """
+            steps {
+                script {
+                    sh """
 
-                """
+                    """
+                }
             }
         }
         stage ('Deploy') {
-            script {
-                sh """
+            steps {
+                script {
+                    sh """
 
-                """
+                    """
+                }
             }
         }
     }
