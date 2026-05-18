@@ -9,14 +9,13 @@ pipeline {
             steps {
                 script {
                     sh """
-                        echo "Hello from Build Stage using ROBOSHOP Agent Node"
-
+                        echo "Build Stage from ROBOSHOP Jenkins Agent Node"
                     """
                 }
             }
             post {
                 always {
-                    echo " Post Check after build stage"
+                    echo "Post Check after Build"
                 }
             }
         }
@@ -24,14 +23,13 @@ pipeline {
             steps {
                 script {
                     sh """
-                        echo "Hello from Test Stage using ROBOSHOP Agent Node"
-
+                        echo "Test Stage from ROBOSHOP Jenkins Agent Node"
                     """
                 }
             }
             post {
                 always {
-                    echo "Post Check after test stage"
+                    echo "Post Check after Test"
                 }
             }
         }
@@ -39,27 +37,20 @@ pipeline {
             steps {
                 script {
                     sh """
-                        echo " Hello from Deploy Stage using ROBOSHOP Agent Node"
-
+                        echo "Deploy Stage from ROBOSHOP Jenkins Agent Node"
                     """
                 }
             }
             post {
                 always {
-                    echo "Post Check after deploy stage"
+                    echo "Post Check after Deploy"
                 }
             }
         }
     }
     post {
         always {
-            echo " post check after final builds"
-        }
-        success {
-            echo "Pipeline Success"
-        }
-        failure {
-            echo "Pipeline Failure"
+            echo "Post Checks after Deploy stage as final"
         }
     }
 }
