@@ -9,33 +9,48 @@ pipeline {
             steps {
                 script {
                     sh """
-                        echo "Build Stage from Jenkins agent node"
-
+                        echo "Build Stage from ROBOSHOP Jenkins Agent Node"
                     """
                 }
             }
-
+            post {
+                always {
+                    echo "Post Check after Build"
+                }
+            }
         }
         stage ('Test') {
             steps {
                 script {
                     sh """
-                        echo "Test Stage from Jenkins agent node"
+                        echo "Test Stage from ROBOSHOP Jenkins Agent Node"
                     """
                 }
-
             }
-
+            post {
+                always {
+                    echo "Post Check after Test"
+                }
+            }
         }
         stage ('Deploy') {
             steps {
                 script {
                     sh """
-                        echo "Deploy Stage from Jenkins agent node"
+                        echo "Deploy Stage from ROBOSHOP Jenkins Agent Node"
                     """
                 }
-
             }
+            post {
+                always {
+                    echo "Post Check after Deploy"
+                }
+            }
+        }
+    }
+    post {
+        always {
+            echo "Post Checks after Deploy stage as final"
         }
     }
 }
