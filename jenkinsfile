@@ -20,6 +20,9 @@ pipeline {
         password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'Enter a password')
     }
     stages {
+        stage ('Github-webhook-check') {
+            echo "GitHub webhook initiated automatically"
+        }
         stage ('Build') {
             steps {
                 script {
